@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/main-style.css">
+    <title>FreeFloor | Quran Listen</title>
+    <!-- WaveSurfer.js for audio waveforms -->
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+</head>
+<body>
+   <header>
+        <div class="container">
+            <div class="logo">FreeFloor</div>
+           <!-- <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="quran-listen.html" class="active">Quran</a>
+                <a href="https://www.facebook.com/profile.php?id=61578316274127" target="_blank">NTI</a>
+                <a href="https://www.youtube.com/@alghobare/videos" target="_blank">Videos</a>
+                <a href="https://www.youtube.com/@alghobare/playlists" target="_blank">Playlists</a>
+                <a href="quiz.html" target="_blank">Quizes</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>-->
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Quran Listening</h1>
+            <p>All Quran surahs have been fully published in the Hafs ‘an ‘Asim narration (via Al-Shatibiyyah), starting from Friday, March 6, 2026.
+                <br>In the voice of the reciter Abdelrahman Alghobare.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                <a href="index.html" class="btn">Back to Home</a>
+                <a href="https://www.youtube.com/playlist?list=PLFh0jKEsU-xzIbcnUy-qB--_DUBcsGnvP" class="btn" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);" download>Download Full Quran MP3</a>
+               <!-- <a href="https://quran.com/" class="btn" style="background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);" target="_blank">Read Quran Online</a> -->
+            </div>
+        </div>
+    </section>
+
+   <!-- <section style="padding: 40px 0; background: rgba(124, 58, 237, 0.1);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; text-align: center;">
+                <div>
+                    <h3 style="color: #7c3aed; font-size: 2rem; margin-bottom: 0.5rem;">114</h3>
+                    <p style="color: #b8b8b8; margin: 0;">Surahs</p>
+                </div>
+                <div>
+                    <h3 style="color: #7c3aed; font-size: 2rem; margin-bottom: 0.5rem;">30</h3>
+                    <p style="color: #b8b8b8; margin: 0;">Juz</p>
+                </div>
+                <div>
+                    <h3 style="color: #7c3aed; font-size: 2rem; margin-bottom: 0.5rem;">6236</h3>
+                    <p style="color: #b8b8b8; margin: 0;">Verses</p>
+                </div>
+               
+            </div>
+        </div>
+    </section>-->
+
+    <section class="courses" id="quran">
+        <div class="container">
+            <h2>Coming soon: A list of Quran surahs will be added so you can listen to them easily</h2>
+         <!-- <div class="course-grid" id="surahGrid">-->
+                <!-- Surahs will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div>&copy; 2026 freefloor. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" title="Go to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        // Quran Surah data
+        const surahs = [
+            { number: 1, name: "Al-Fatiha", arabic: "الفاتحة", verses: 7, type: "Meccan" },
+            { number: 2, name: "Al-Baqarah", arabic: "البقرة", verses: 286, type: "Medinan" },
+            { number: 3, name: "Aal-E-Imran", arabic: "آل عمران", verses: 200, type: "Medinan" },
+            { number: 4, name: "An-Nisa", arabic: "النساء", verses: 176, type: "Medinan" },
+            { number: 5, name: "Al-Ma'idah", arabic: "المائدة", verses: 120, type: "Medinan" },
+            { number: 6, name: "Al-An'am", arabic: "الأنعام", verses: 165, type: "Meccan" },
+            { number: 7, name: "Al-A'raf", arabic: "الأعراف", verses: 206, type: "Meccan" },
+            { number: 8, name: "Al-Anfal", arabic: "الأنفال", verses: 75, type: "Medinan" },
+            { number: 9, name: "At-Tawbah", arabic: "التوبة", verses: 129, type: "Medinan" },
+            { number: 10, name: "Yunus", arabic: "يونس", verses: 109, type: "Meccan" },
+            { number: 11, name: "Hud", arabic: "هود", verses: 123, type: "Meccan" },
+            { number: 12, name: "Yusuf", arabic: "يوسف", verses: 111, type: "Meccan" },
+            { number: 13, name: "Ar-Ra'd", arabic: "الرعد", verses: 43, type: "Medinan" },
+            { number: 14, name: "Ibrahim", arabic: "إبراهيم", verses: 52, type: "Meccan" },
+            { number: 15, name: "Al-Hijr", arabic: "الحجر", verses: 99, type: "Meccan" },
+            { number: 16, name: "An-Nahl", arabic: "النحل", verses: 128, type: "Meccan" },
+            { number: 17, name: "Al-Isra", arabic: "الإسراء", verses: 111, type: "Meccan" },
+            { number: 18, name: "Al-Kahf", arabic: "الكهف", verses: 110, type: "Meccan" },
+            { number: 19, name: "Maryam", arabic: "مريم", verses: 98, type: "Meccan" },
+            { number: 20, name: "Ta-Ha", arabic: "طه", verses: 135, type: "Meccan" },
+            { number: 21, name: "Al-Anbiya", arabic: "الأنبياء", verses: 112, type: "Meccan" },
+            { number: 22, name: "Al-Hajj", arabic: "الحج", verses: 78, type: "Medinan" },
+            { number: 23, name: "Al-Mu'minun", arabic: "المؤمنون", verses: 118, type: "Meccan" },
+            { number: 24, name: "An-Nur", arabic: "النور", verses: 64, type: "Medinan" },
+            { number: 25, name: "Al-Furqan", arabic: "الفرقان", verses: 77, type: "Meccan" },
+            { number: 26, name: "Ash-Shu'ara", arabic: "الشعراء", verses: 227, type: "Meccan" },
+            { number: 27, name: "An-Naml", arabic: "النمل", verses: 93, type: "Meccan" },
+            { number: 28, name: "Al-Qasas", arabic: "القصص", verses: 88, type: "Meccan" },
+            { number: 29, name: "Al-Ankabut", arabic: "العنكبوت", verses: 69, type: "Meccan" },
+            { number: 30, name: "Ar-Rum", arabic: "الروم", verses: 60, type: "Meccan" },
+            { number: 31, name: "Luqman", arabic: "لقمان", verses: 34, type: "Meccan" },
+            { number: 32, name: "As-Sajdah", arabic: "السجدة", verses: 30, type: "Meccan" },
+            { number: 33, name: "Al-Ahzab", arabic: "الأحزاب", verses: 73, type: "Medinan" },
+            { number: 34, name: "Saba", arabic: "سبأ", verses: 54, type: "Meccan" },
+            { number: 35, name: "Fatir", arabic: "فاطر", verses: 45, type: "Meccan" },
+            { number: 36, name: "Ya-Sin", arabic: "يس", verses: 83, type: "Meccan" },
+            { number: 37, name: "As-Saffat", arabic: "الصافات", verses: 182, type: "Meccan" },
+            { number: 38, name: "Sad", arabic: "ص", verses: 88, type: "Meccan" },
+            { number: 39, name: "Az-Zumar", arabic: "الزمر", verses: 75, type: "Meccan" },
+            { number: 40, name: "Ghafir", arabic: "غافر", verses: 85, type: "Meccan" },
+            { number: 41, name: "Fussilat", arabic: "فصلت", verses: 54, type: "Meccan" },
+            { number: 42, name: "Ash-Shura", arabic: "الشورى", verses: 53, type: "Meccan" },
+            { number: 43, name: "Az-Zukhruf", arabic: "الزخرف", verses: 89, type: "Meccan" },
+            { number: 44, name: "Ad-Dukhan", arabic: "الدخان", verses: 59, type: "Meccan" },
+            { number: 45, name: "Al-Jathiyah", arabic: "الجاثية", verses: 37, type: "Meccan" },
+            { number: 46, name: "Al-Ahqaf", arabic: "الأحقاف", verses: 35, type: "Meccan" },
+            { number: 47, name: "Muhammad", arabic: "محمد", verses: 38, type: "Medinan" },
+            { number: 48, name: "Al-Fath", arabic: "الفتح", verses: 29, type: "Medinan" },
+            { number: 49, name: "Al-Hujurat", arabic: "الحجرات", verses: 18, type: "Medinan" },
+            { number: 50, name: "Qaf", arabic: "ق", verses: 45, type: "Meccan" },
+            { number: 51, name: "Adh-Dhariyat", arabic: "الذاريات", verses: 60, type: "Meccan" },
+            { number: 52, name: "At-Tur", arabic: "الطور", verses: 49, type: "Meccan" },
+            { number: 53, name: "An-Najm", arabic: "النجم", verses: 62, type: "Meccan" },
+            { number: 54, name: "Al-Qamar", arabic: "القمر", verses: 55, type: "Meccan" },
+            { number: 55, name: "Ar-Rahman", arabic: "الرحمن", verses: 78, type: "Medinan" },
+            { number: 56, name: "Al-Waqi'ah", arabic: "الواقعة", verses: 96, type: "Meccan" },
+            { number: 57, name: "Al-Hadid", arabic: "الحديد", verses: 29, type: "Medinan" },
+            { number: 58, name: "Al-Mujadilah", arabic: "المجادلة", verses: 22, type: "Medinan" },
+            { number: 59, name: "Al-Hashr", arabic: "الحشر", verses: 24, type: "Medinan" },
+            { number: 60, name: "Al-Mumtahanah", arabic: "الممتحنة", verses: 13, type: "Medinan" },
+            { number: 61, name: "As-Saff", arabic: "الصف", verses: 14, type: "Medinan" },
+            { number: 62, name: "Al-Jumu'ah", arabic: "الجمعة", verses: 11, type: "Medinan" },
+            { number: 63, name: "Al-Munafiqun", arabic: "المنافقون", verses: 11, type: "Medinan" },
+            { number: 64, name: "At-Taghabun", arabic: "التغابن", verses: 18, type: "Medinan" },
+            { number: 65, name: "At-Talaq", arabic: "الطلاق", verses: 12, type: "Medinan" },
+            { number: 66, name: "At-Tahrim", arabic: "التحريم", verses: 12, type: "Medinan" },
+            { number: 67, name: "Al-Mulk", arabic: "الملك", verses: 30, type: "Meccan" },
+            { number: 68, name: "Al-Qalam", arabic: "القلم", verses: 52, type: "Meccan" },
+            { number: 69, name: "Al-Haqqah", arabic: "الحاقة", verses: 52, type: "Meccan" },
+            { number: 70, name: "Al-Ma'arij", arabic: "المعارج", verses: 44, type: "Meccan" },
+            { number: 71, name: "Nuh", arabic: "نوح", verses: 28, type: "Meccan" },
+            { number: 72, name: "Al-Jinn", arabic: "الجن", verses: 28, type: "Meccan" },
+            { number: 73, name: "Al-Muzzammil", arabic: "المزمل", verses: 20, type: "Meccan" },
+            { number: 74, name: "Al-Muddaththir", arabic: "المدثر", verses: 56, type: "Meccan" },
+            { number: 75, name: "Al-Qiyamah", arabic: "القيامة", verses: 40, type: "Meccan" },
+            { number: 76, name: "Al-Insan", arabic: "الإنسان", verses: 31, type: "Medinan" },
+            { number: 77, name: "Al-Mursalat", arabic: "المرسلات", verses: 50, type: "Meccan" },
+            { number: 78, name: "An-Naba", arabic: "النبأ", verses: 40, type: "Meccan" },
+            { number: 79, name: "An-Nazi'at", arabic: "النازعات", verses: 46, type: "Meccan" },
+            { number: 80, name: "Abasa", arabic: "عبس", verses: 42, type: "Meccan" },
+            { number: 81, name: "At-Takwir", arabic: "التكوير", verses: 29, type: "Meccan" },
+            { number: 82, name: "Al-Infitar", arabic: "الإنفطار", verses: 19, type: "Meccan" },
+            { number: 83, name: "Al-Mutaffifin", arabic: "المطففين", verses: 36, type: "Meccan" },
+            { number: 84, name: "Al-Inshiqaq", arabic: "الإنشقاق", verses: 25, type: "Meccan" },
+            { number: 85, name: "Al-Buruj", arabic: "البروج", verses: 22, type: "Meccan" },
+            { number: 86, name: "At-Tariq", arabic: "الطارق", verses: 17, type: "Meccan" },
+            { number: 87, name: "Al-A'la", arabic: "الأعلى", verses: 19, type: "Meccan" },
+            { number: 88, name: "Al-Ghashiyah", arabic: "الغاشية", verses: 26, type: "Meccan" },
+            { number: 89, name: "Al-Fajr", arabic: "الفجر", verses: 30, type: "Meccan" },
+            { number: 90, name: "Al-Balad", arabic: "البلد", verses: 20, type: "Meccan" },
+            { number: 91, name: "Ash-Shams", arabic: "الشمس", verses: 15, type: "Meccan" },
+            { number: 92, name: "Al-Layl", arabic: "الليل", verses: 21, type: "Meccan" },
+            { number: 93, name: "Ad-Duha", arabic: "الضحى", verses: 11, type: "Meccan" },
+            { number: 94, name: "Ash-Sharh", arabic: "الشرح", verses: 8, type: "Meccan" },
+            { number: 95, name: "At-Tin", arabic: "التين", verses: 8, type: "Meccan" },
+            { number: 96, name: "Al-Alaq", arabic: "العلق", verses: 19, type: "Meccan" },
+            { number: 97, name: "Al-Qadr", arabic: "القدر", verses: 5, type: "Meccan" },
+            { number: 98, name: "Al-Bayyinah", arabic: "البينة", verses: 8, type: "Meccan" },
+            { number: 99, name: "Az-Zalzalah", arabic: "الزلزلة", verses: 8, type: "Meccan" },
+            { number: 100, name: "Al-Adiyat", arabic: "العاديات", verses: 11, type: "Meccan" },
+            { number: 101, name: "Al-Qari'ah", arabic: "القارعة", verses: 11, type: "Meccan" },
+            { number: 102, name: "At-Takathur", arabic: "التكاثر", verses: 8, type: "Meccan" },
+            { number: 103, name: "Al-Asr", arabic: "العصر", verses: 3, type: "Meccan" },
+            { number: 104, name: "Al-Humazah", arabic: "الهمزة", verses: 9, type: "Meccan" },
+            { number: 105, name: "Al-Fil", arabic: "الفيل", verses: 5, type: "Meccan" },
+            { number: 106, name: "Quraysh", arabic: "قريش", verses: 4, type: "Meccan" },
+            { number: 107, name: "Al-Ma'un", arabic: "الماعون", verses: 7, type: "Meccan" },
+            { number: 108, name: "Al-Kawthar", arabic: "الكوثر", verses: 3, type: "Meccan" },
+            { number: 109, name: "Al-Kafirun", arabic: "الكافرون", verses: 6, type: "Meccan" },
+            { number: 110, name: "An-Nasr", arabic: "النصر", verses: 3, type: "Medinan" },
+            { number: 111, name: "Al-Masad", arabic: "المسد", verses: 5, type: "Meccan" },
+            { number: 112, name: "Al-Ikhlas", arabic: "الإخلاص", verses: 4, type: "Meccan" },
+            { number: 113, name: "Al-Falaq", arabic: "الفلق", verses: 5, type: "Meccan" },
+            { number: 114, name: "An-Nas", arabic: "الناس", verses: 6, type: "Meccan" }
+        ];
+
+        // Function to create surah card
+        function createSurahCard(surah) {
+            const card = document.createElement('div');
+            card.className = 'course';
+            card.innerHTML = `
+                <div class="course-header">
+                    <h3>${surah.number}. ${surah.name} (${surah.arabic})</h3>
+                    <div class="course-price">${surah.verses} Verses</div>
+                </div>
+                <div class="course-content">
+                    <p>Type: ${surah.type}</p>
+                    <div class="waveform-container" id="waveform-${surah.number}" style="margin: 1rem 0; height: 80px; background: rgba(124, 58, 237, 0.1); border-radius: 8px;"></div>
+                    <div class="audio-controls" style="display: flex; gap: 1rem; align-items: center; margin: 1rem 0;">
+                        <button class="play-btn btn" data-surah="${surah.number}" style="padding: 8px 16px; font-size: 0.9rem;">Play</button>
+                    </div>
+                </div>
+            `;
+            return card;
+        }
+
+        // Load surahs
+        const surahGrid = document.getElementById('surahGrid');
+        surahs.forEach(surah => {
+            surahGrid.appendChild(createSurahCard(surah));
+        });
+
+        // Audio players
+        const audioPlayers = {};
+
+        // Initialize WaveSurfer for each surah (without loading)
+        surahs.forEach(surah => {
+            const waveformContainer = document.getElementById(`waveform-${surah.number}`);
+            const wavesurfer = WaveSurfer.create({
+                container: waveformContainer,
+                waveColor: '#7c3aed',
+                progressColor: '#a855f7',
+                height: 60,
+                responsive: true,
+                normalize: true,
+                backend: 'WebAudio'
+            });
+
+            audioPlayers[surah.number] = wavesurfer;
+
+            // Play/Pause button
+            const playBtn = document.querySelector(`.play-btn[data-surah="${surah.number}"]`);
+            let isLoaded = false;
+            playBtn.addEventListener('click', () => {
+                if (!isLoaded) {
+                    // Load audio on first play
+                    const audioUrl = `audios/surah-${surah.number}.mp3`;
+                    wavesurfer.load(audioUrl);
+                    isLoaded = true;
+                    wavesurfer.on('ready', () => {
+                        wavesurfer.play();
+                        playBtn.textContent = 'Pause';
+                    });
+                } else {
+                    if (wavesurfer.isPlaying()) {
+                        wavesurfer.pause();
+                        playBtn.textContent = 'Play';
+                    } else {
+                        // Pause other players
+                        Object.values(audioPlayers).forEach(player => {
+                            if (player !== wavesurfer) player.pause();
+                        });
+                        document.querySelectorAll('.play-btn').forEach(btn => {
+                            if (btn !== playBtn) btn.textContent = 'Play';
+                        });
+
+                        wavesurfer.play();
+                        playBtn.textContent = 'Pause';
+                    }
+                }
+            });
+
+            // Update play button on finish
+            wavesurfer.on('finish', () => {
+                playBtn.textContent = 'Play';
+            });
+        });
+
+        // Header scroll behavior
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+
+            lastScrollTop = scrollTop;
+
+            // Scroll to top button visibility
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (scrollTop > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Scroll to top functionality
+        document.getElementById('scrollToTopBtn').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile nav toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('open');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Auto-close nav on link click (mobile)
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (mainNav.classList.contains('open')) {
+                    mainNav.classList.remove('open');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

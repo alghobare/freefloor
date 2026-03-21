@@ -3,205 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreeFloor.com | Home</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/main-style.css">
+    <title>Freefloor | Home</title>
+  
 </head>
 <body>
-   <nav>
-        <div class="container">
-            <ul>
-                <li><a href="https://www.youtube.com/@alghobare" target="_blank">YouTube</a></li>
-                   <li><a href="https://www.facebook.com/mixer.bode" target="_blank">Facebook</a></li>
-
-                   <li><a href="#youtube" target="_blank">Courses</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Projects</a></li>
-             
-               <!-- <li><a href="#contact">Contact</a></li>-->
-            </ul>
-        </div>
-    </nav>
-
-
     <header>
-     
-        <div class="container header-grid">
-            
-            <div class="header-text">
-                <h1>FreeFloor</h1>
-                <p>
-May your days be filled with goodness and happiness.
-My name is Abdelrahman Al.Ghobare.
-<br>
-I worked at the Training Center of the Faculty of Engineering as a Network Support specialist
-for 5 years, then I moved to Xceed, where I currently work as a Technical Support representative by phone.
-<br><br>
-You are now, my friend, on the free platform “Freefloor,” 
-which I have created to be a beacon and a space where 
-I share everything I have learned for free with everyone as much as possible.
-<br><br>
-I believe that knowledge and learning are not exclusive to any group or nation, but belong to all people—regardless of their religion, color, or race. To me, all people are equal.
-                <div class="header-cta">
-                    <a class="btn btn-primary" href="https://www.youtube.com/@alghobare">Get in Touch</a>
-                    <a class="btn btn-outline" href="#portfolio">View Portfolio</a>
-                </div>
-            </div>
-
-            <div class="header-illustration" aria-hidden="true">
-                <!-- Simple anime-style illustration -->
-                <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg" class="anime-character">
-                    <defs>
-                        <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#7B61FF" />
-                            <stop offset="100%" stop-color="#FF5AC7" />
-                        </linearGradient>
-                        <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="rgba(255,255,255,0.5)" />
-                            <stop offset="100%" stop-color="rgba(255,255,255,0)" />
-                        </linearGradient>
-                    </defs>
-
-                    <!-- Background glow -->
-                    <circle cx="180" cy="180" r="170" fill="url(#glow)" />
-
-                    <!-- Hair -->
-                    <path d="M90 180 C90 60 270 60 270 180 C270 260 220 300 180 300 C140 300 90 260 90 180 Z" fill="url(#hair)" />
-
-                    <!-- Face -->
-                    <circle cx="180" cy="195" r="85" fill="#FDECEC" />
-
-                    <!-- Eyes -->
-                    <g transform="translate(0, 10)">
-                        <ellipse cx="150" cy="190" rx="18" ry="24" fill="#FFF" />
-                        <ellipse cx="210" cy="190" rx="18" ry="24" fill="#FFF" />
-                        <circle cx="150" cy="190" r="9" fill="#2B2B2B" />
-                        <circle cx="210" cy="190" r="9" fill="#2B2B2B" />
-                        <circle cx="146" cy="186" r="4" fill="#FFF" opacity="0.8" />
-                        <circle cx="206" cy="186" r="4" fill="#FFF" opacity="0.8" />
-                    </g>
-
-                    <!-- Smile -->
-                    <path d="M150 230 C170 250 210 250 230 230" stroke="#2B2B2B" stroke-width="4" fill="none" stroke-linecap="round" />
-
-                    <!-- Sparkles -->
-                    <g class="sparkle" opacity="0.8">
-                        <polygon points="50,40 55,60 75,60 58,72 63,92 50,78 37,92 42,72 25,60 45,60" fill="#FFEB3B" />
-                        <polygon points="315,70 320,90 340,90 323,102 328,122 315,108 302,122 307,102 290,90 310,90" fill="#00E5FF" />
-                    </g>
-                </svg>
-            </div>
+        <div class="container">
+            <div class="logo">FreeFloor</div>
+            <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="index.html">Refresh</a>
+                <a href="quran-listen.html" target="_blank">Quran</a>
+                <a href="https://www.facebook.com/profile.php?id=61578316274127" target="_blank">NTI</a>
+                <a href="https://www.youtube.com/@alghobare/videos" target="_blank">Videos</a>
+                <a href="https://www.youtube.com/@alghobare/playlists" target="_blank">Playlists</a>
+                <a href="quiz.html" target="_blank">Quizes</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
         </div>
     </header>
 
- 
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to the FreeFloor platform</h1>
+            <p>The Free Floor platform fully supports the National Institute of Communications (NTI) in Port Said, but the platform is owned by its owner, Abderrahman Al.ghobare
+</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                <a href="#videos" class="btn">Explore Courses</a>
+                <a href="https://www.youtube.com/@alghobare" class="btn" style="background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);" target="_blank">Subscribe on YouTube</a>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 40px 0; background: rgba(124, 58, 237, 0.1);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; text-align: center;">
+                <div>
+                    <h3 style="color: #7c3aed; font-size: 2rem; margin-bottom: 0.5rem;">400+</h3>
+                    <p style="color: #b8b8b8; margin: 0;">Subscribers</p>
+                </div>
+                <div>
+                    <h3 style="color: #7c3aed; font-size: 2rem; margin-bottom: 0.5rem;">100+</h3>
+                    <p style="color: #b8b8b8; margin: 0;">Videos</p>
+                </div>
+                <div>
+                    <h3 style="color: #7c3aed; font-size: 2rem; margin-bottom: 0.5rem;">2k+</h3>
+                    <p style="color: #b8b8b8; margin: 0;">Views</p>
+                </div>
+                <div>
+                    <h3 style="color: #7c3aed; font-size: 2rem; margin-bottom: 0.5rem;">6</h3>
+                    <p style="color: #b8b8b8; margin: 0;">Years Active</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <section id="videos" class="courses">
     
-
-    <section id="skills">
         <div class="container">
-            <h2>Networking Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <h3>Network Design</h3>
-                    <p>Expert in designing scalable and secure network architectures for enterprises and data centers.</p>
+            <h2>All Courses</h2>
+            <div class="course-grid">
+
+
+               
+<!-----|Course Num1|----->
+                <div class="course">
+                    <div class="course-header">
+                        <h3>Technical Support (ISP) Edition - Beginner To Advanced Level</h3>
+                        <div class="course-price">Daily Updates</div>
+                    </div>
+                    <div class="course-content">
+                        <p>Join the Technical Support Course for Internet Service Providers, from beginner to advanced level, with Abdelrahman Alghobare. You will learn everything from the basics to advanced techniques in phone-based internet support, which is essential for employment in this field. Many service provider companies are waiting for you.</p>
+                        <div class="course-details">
+                            <span>All Levels</span>
+                            <span>Free</span>
+                            <span>YouTube</span>
+                        </div>
+                        <div class="features">
+                            <h4>Content Includes:</h4>
+                            <ul>
+                                <li>ISP operations</li>
+                                <li>Network troubleshooting</li>
+                                <li>Modem & router</li>
+                                <li>DSLAM understanding</li>
+                                <li>Line analysis</li>
+                                <li>Career ready</li>
+
+                            </ul>
+                        </div>
+                        <button class="enroll-btn" onclick="watchVideo('Tech Reviews & Gadgets')">Watch Now</button>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <h3>Cisco Technologies</h3>
-                    <p>Certified in Cisco networking solutions, including routing, switching, and security.</p>
+<!---------------------------->
+
+<!---------------------------->
+                <div class="course">
+                    <div class="course-header">
+                        <h3>Kali Linux Mastery: From Basics to Advanced Penetration Testing</h3>
+                        <div class="course-price">Coming Soon</div>
+                    </div>
+                    <div class="course-content">
+                        <p>
+This course takes you from the fundamentals of Kali Linux to advanced penetration testing techniques used in real-world scenarios.
+You will learn how to use professional security tools, analyze vulnerabilities, and perform ethical hacking step by step.
+Whether you're a beginner or aiming to become a cybersecurity professional, this course builds your skills in a practical and structured way.</p>
+                        <div class="course-details">
+                            <span>All Levels</span>
+                            <span>Free</span>
+                            <span>YouTube</span>
+                        </div>
+                        <div class="features">
+                            <h4>Topics Covered:</h4>
+                            <ul>
+                                <li>Kali basics</li>
+                                <li>Linux fundamentals</li>
+                                <li>Tools usage</li>
+                                <li>Network scanning</li>
+                                <li>Vulnerability analysis</li>
+                                <li>Exploitation basics</li>
+                                <li>Web attacks</li>
+                                <li>Wireless security</li>
+                                <li>Privilege escalation</li>
+                                <li>Post exploitation</li>
+                            </ul>
+                        </div>
+                        <button class="enroll-btn disabled-btn" disabled>Coming Soon</button>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <h3>Cloud Networking</h3>
-                    <p>Proficient in AWS, Azure, and GCP networking services and hybrid cloud architectures.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Network Security</h3>
-                    <p>Specialized in implementing firewalls, VPNs, and intrusion detection systems.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>SD-WAN & SDN</h3>
-                    <p>Experience with software-defined networking and wide area network solutions.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Troubleshooting</h3>
-                    <p>Advanced skills in diagnosing and resolving complex network issues.</p>
+<!---------------------------->
+
+
+                
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="youtube">
+    <section class="testimonials">
         <div class="container">
-            <h2>All Of The Playlists Belonging To The Channel</h2>
-            <!--<p>Check out my latest videos on networking topics, tutorials, and industry insights.</p>-->
-            <div class="youtube-grid">
-                <div class="video-item">
-                    <h3>Introduction to Networking</h3>
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            <h2>What Our Subscribers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Masha'Allah, beautiful explanation. May Allah bless you, and may Allah reward you for delivering the information in a simplified way."</p>
+                    <div class="testimonial-author">- @R.Z_123</div>
                 </div>
-                <div class="video-item">
-                    <h3>Cisco Certification Guide</h3>
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                <div class="testimonial">
+                    <p>"May Allah reward you, but it was free. Please, no music in the video, because it is forbidden."</p>
+                    <div class="testimonial-author">- @ziadezzat8802</div>
                 </div>
-                <div class="video-item">
-                    <h3>Cloud Networking Basics</h3>
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                </div>
-            </div>
-            <p class="section-cta">
-                <a class="btn btn-primary" href="https://www.youtube.com/yourchannel" target="_blank">Subscribe to My Channel</a>
-            </p>
-        </div>
-    </section>
-
-    <section id="portfolio">
-        <div class="container">
-            <h2>Portfolio Projects</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="images/project1.jpg" alt="Enterprise Network Design">
-                    <div class="content">
-                        <h3>Enterprise Network Redesign</h3>
-                        <p>Complete redesign of a Fortune 500 company's network infrastructure, improving performance by 40% and reducing costs.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/project2.jpg" alt="Data Center Migration">
-                    <div class="content">
-                        <h3>Data Center Migration</h3>
-                        <p>Successful migration of legacy data center to cloud-based infrastructure with zero downtime.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/project3.jpg" alt="Security Implementation">
-                    <div class="content">
-                        <h3>Network Security Overhaul</h3>
-                        <p>Implementation of comprehensive security measures protecting against advanced persistent threats.</p>
-                    </div>
+                <div class="testimonial">
+                    <p>"Masha'Allah, may Allah bless you. I want to record a recitation of Surat Al-kahf"</p>
+                    <div class="testimonial-author">- @habiba8631</div>
                 </div>
             </div>
         </div>
     </section>
-
-<!--<section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Let's connect! Reach out for networking projects, collaborations, or just to say hello.</p>
-            <form action="#" method="post">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section> -->
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
-            <p>Follow me on <a href="#" style="color: #667eea;">LinkedIn</a> | <a href="#" style="color: #667eea;">Twitter</a></p>
+            <div>&copy; 2026 freefloor. All rights reserved.</div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" title="Go to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down - hide header
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up - show header
+                header.style.transform = 'translateY(0)';
+            }
+
+            lastScrollTop = scrollTop;
+
+            // Scroll to top button visibility
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (scrollTop > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Scroll to top functionality
+        document.getElementById('scrollToTopBtn').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('open');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Auto-close nav on link click (mobile)
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (mainNav.classList.contains('open')) {
+                    mainNav.classList.remove('open');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        });
+
+        function watchVideo(videoName) {
+            let playlistUrl = '';
+
+            switch(videoName) {
+                case 'Tech Reviews & Gadgets':
+                    playlistUrl = 'https://www.youtube.com/playlist?list=PLFh0jKEsU-xxmdahhllWQ3b31HPMESpc2';
+                    break;
+                case 'Photography & Editing':
+                    playlistUrl = 'https://www.youtube.com/@alghobare/playlists';
+                    break;
+                case 'Lifestyle & Vlogs':
+                    playlistUrl = 'https://www.youtube.com/@alghobare/playlists';
+                    break;
+                default:
+                    playlistUrl = 'https://www.youtube.com/@alghobare/playlists';
+            }
+
+            window.open(playlistUrl, '_blank');
+        }
+    </script>
 </body>
 </html>
